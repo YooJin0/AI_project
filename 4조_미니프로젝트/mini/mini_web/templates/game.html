@@ -1,0 +1,57 @@
+<!-- game분류시 보여주는 html 문서 -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
+        <style>
+            h1{
+                text-align: left;
+                font-size: 50px;
+                font-family: 'Do Hyeon', sans-serif;
+            }
+            h2{
+                font-size: 25px;
+                font-family: 'Do Hyeon', sans-serif;
+            }
+            h4{
+                font-size: 20px;
+                font-family: 'Do Hyeon', sans-serif;
+            }
+            h3{
+                font-size: 15px;
+                font-family: 'Do Hyeon', sans-serif;
+            }
+            h1 span:nth-child(1) {
+                 color:#332d2d;
+             }
+             h1 span:nth-child(2) {
+               color:#332d2d;
+             }
+             hr {
+                border: 0;
+             height: 2px;
+             background-color: rgb(0, 0, 0);
+        }
+        img{
+        border : 1px;
+        width : 300px;
+        height: 150px;
+        display:blcok;
+    }
+        </style>
+    </head>
+    <body>
+        <img src="/static/WE_ROAD.png" align='left'>
+        <h1>분석결과</h1>
+        <h1><span>직군 :</span><span> 게임산업 관련직종을 추천드립니다</span> </h1>
+        {% for obj in result_list %}
+        <hr/>
+        <h4><p>당신의 입력 키워드 : {{obj}}</p></h4>
+        {% endfor %}
+        <h2>게임산업 직군 개발자의 정보입니다</h2>
+        <h3>출처 : 워크넷 직업 정보 찾기 </h3>
+        <iframe width="100%" height="1000px" scrolling=auto src="https://www.work.go.kr/consltJobCarpa/srch/jobInfoSrch/summaryExmpl.do?jobNm=20236&selectId=">워크넷접속</iframe> 
+    </body>
+</html>
